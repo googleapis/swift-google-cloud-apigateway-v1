@@ -27,11 +27,11 @@ extension Clients {
   protocol ApiGatewayServiceStub {
     func listGateways(
       request: ListGatewaysRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudApigatewayV1.ListGatewaysResponse
+    ) async throws -> GoogleCloudApiGatewayV1.ListGatewaysResponse
 
     func getGateway(
       request: GetGatewayRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudApigatewayV1.Gateway
+    ) async throws -> GoogleCloudApiGatewayV1.Gateway
 
     func createGateway(
       request: CreateGatewayRequest, options: GoogleCloudGax.RequestOptions
@@ -47,11 +47,11 @@ extension Clients {
 
     func listApis(
       request: ListApisRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudApigatewayV1.ListApisResponse
+    ) async throws -> GoogleCloudApiGatewayV1.ListApisResponse
 
     func getApi(
       request: GetApiRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudApigatewayV1.Api
+    ) async throws -> GoogleCloudApiGatewayV1.Api
 
     func createApi(
       request: CreateApiRequest, options: GoogleCloudGax.RequestOptions
@@ -67,11 +67,11 @@ extension Clients {
 
     func listApiConfigs(
       request: ListApiConfigsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudApigatewayV1.ListApiConfigsResponse
+    ) async throws -> GoogleCloudApiGatewayV1.ListApiConfigsResponse
 
     func getApiConfig(
       request: GetApiConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudApigatewayV1.ApiConfig
+    ) async throws -> GoogleCloudApiGatewayV1.ApiConfig
 
     func createApiConfig(
       request: CreateApiConfigRequest, options: GoogleCloudGax.RequestOptions
@@ -112,7 +112,7 @@ extension Clients {
 
     public func listGateways(
       request: ListGatewaysRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudApigatewayV1.ListGatewaysResponse {
+    ) async throws -> GoogleCloudApiGatewayV1.ListGatewaysResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -132,12 +132,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudApigatewayV1.ListGatewaysResponse.self, from: data)
+        GoogleCloudApiGatewayV1.ListGatewaysResponse.self, from: data)
     }
 
     public func getGateway(
       request: GetGatewayRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudApigatewayV1.Gateway {
+    ) async throws -> GoogleCloudApiGatewayV1.Gateway {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -152,7 +152,7 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudApigatewayV1.Gateway.self, from: data)
+        GoogleCloudApiGatewayV1.Gateway.self, from: data)
     }
 
     public func createGateway(
@@ -229,7 +229,7 @@ extension Clients {
 
     public func listApis(
       request: ListApisRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudApigatewayV1.ListApisResponse {
+    ) async throws -> GoogleCloudApiGatewayV1.ListApisResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -249,12 +249,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudApigatewayV1.ListApisResponse.self, from: data)
+        GoogleCloudApiGatewayV1.ListApisResponse.self, from: data)
     }
 
     public func getApi(
       request: GetApiRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudApigatewayV1.Api {
+    ) async throws -> GoogleCloudApiGatewayV1.Api {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -269,7 +269,7 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudApigatewayV1.Api.self, from: data)
+        GoogleCloudApiGatewayV1.Api.self, from: data)
     }
 
     public func createApi(
@@ -346,7 +346,7 @@ extension Clients {
 
     public func listApiConfigs(
       request: ListApiConfigsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudApigatewayV1.ListApiConfigsResponse {
+    ) async throws -> GoogleCloudApiGatewayV1.ListApiConfigsResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -366,12 +366,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudApigatewayV1.ListApiConfigsResponse.self, from: data)
+        GoogleCloudApiGatewayV1.ListApiConfigsResponse.self, from: data)
     }
 
     public func getApiConfig(
       request: GetApiConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudApigatewayV1.ApiConfig {
+    ) async throws -> GoogleCloudApiGatewayV1.ApiConfig {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -388,7 +388,7 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudApigatewayV1.ApiConfig.self, from: data)
+        GoogleCloudApiGatewayV1.ApiConfig.self, from: data)
     }
 
     public func createApiConfig(
